@@ -28,7 +28,7 @@ export function Hero() {
             <a href="#projects" className="btn btn--primary">
               Explore my work
             </a>
-            <a href="#connect" className="btn btn--ghost">
+            <a href="#contact" className="btn btn--ghost">
               Let’s connect
             </a>
           </div>

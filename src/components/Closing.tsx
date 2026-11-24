@@ -23,6 +23,7 @@ export function Closing() {
       </Reveal>
 
       <Reveal delay={80}>
+        <div id="contact" className="closing__anchor" aria-hidden="true" />
         <p className="closing__eyebrow">{closing.eyebrow}</p>
         <h2 id="connect-title" className="closing__heading">
           {closing.heading.map((line, i) => (

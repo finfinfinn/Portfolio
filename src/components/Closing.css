@@ -61,6 +61,14 @@
   color: var(--color-text-dim);
 }
 
+/* Invisible scroll target so "Let's connect" lands on the contact block
+   (heading + CTA + contact details), not the awards above it. */
+.closing__anchor {
+  position: relative;
+  top: -2rem;
+  scroll-margin-top: 6rem;
+}
+
 .closing__eyebrow {
   font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);
