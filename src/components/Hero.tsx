@@ -5,20 +5,10 @@ import "./Hero.css";
 export function Hero() {
   return (
     <section id="top" className="hero" aria-label="Introduction">
-      <div className="hero__media">
-        <Img
-          src="/images/me/hero-rooftop.jpg"
-          alt="Samuel Ong on a rooftop with a city skyline behind him"
-          className="hero__img"
-          placeholderLabel="Hero · Rooftop photo"
-          eager
-        />
-        <div className="hero__scrim" aria-hidden="true" />
-        <div className="hero__grain" aria-hidden="true" />
-      </div>
+      <div className="hero__inner">
+        <div className="hero__text">
+          <p className="hero__kicker">{profile.name} · Portfolio</p>
 
-      <div className="hero__content">
-        <div className="hero__inner">
           <p className="hero__role">
             <span className="hero__dot" aria-hidden="true" />
             {profile.role}
@@ -32,7 +22,6 @@ export function Hero() {
             ))}
           </h1>
 
-          <p className="hero__name">{profile.name}</p>
           <p className="hero__intro">{profile.heroIntro}</p>
 
           <div className="hero__ctas">
@@ -45,11 +34,27 @@ export function Hero() {
           </div>
         </div>
 
-        <a href="#about" className="hero__scroll" aria-label="Scroll to About section">
-          <span>Scroll</span>
-          <span className="hero__scroll-line" aria-hidden="true" />
-        </a>
+        <div className="hero__media">
+          <figure className="hero__frame">
+            <Img
+              src="/images/me/hero-rooftop.jpg"
+              alt="Samuel Ong on a rooftop with a city skyline behind him"
+              className="hero__img"
+              placeholderLabel="Hero · Rooftop photo"
+              eager
+            />
+            <figcaption className="hero__caption">
+              <span className="hero__caption-line" aria-hidden="true" />
+              Osaka · on the roof
+            </figcaption>
+          </figure>
+        </div>
       </div>
+
+      <a href="#about" className="hero__scroll" aria-label="Scroll to About section">
+        <span>Scroll</span>
+        <span className="hero__scroll-line" aria-hidden="true" />
+      </a>
     </section>
   );
 }
