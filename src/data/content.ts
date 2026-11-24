@@ -200,7 +200,7 @@ export const track = {
   eyebrow: "BEYOND ENGINEERING · TRACK & FIELD",
   heading: "THE COMEBACK IS PART OF THE STORY.",
   body: [
-    "Track & Field has taught me discipline, consistency and resilience. After a hamstring injury, returning to competition reminded me that progress is not always linear — and that persistence and patience matter.",
+    "Track & Field has taught me discipline, consistency and resilience. After a hamstring injury, returning to competition reminded me that progress is not always linear, and that persistence and patience matter.",
     "I’ve stayed with the sport from secondary school through to Temasek Polytechnic, where I still train and compete, balancing it with my studies.",
   ],
   teamHeading: "Leadership, as a former Vice-Captain",
