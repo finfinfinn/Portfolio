@@ -79,12 +79,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 42%; /* covers the value + P/L region at the top */
+  /* Covers the whole header region: the account value AND the green
+     profit/loss line, down to just above the chart. */
+  height: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 0%;
-  filter: blur(11px) saturate(0.9);
-  transform: scale(1.06); /* hide soft edges from the blur */
+  filter: blur(16px) saturate(0.85);
+  transform: scale(1.12); /* overscan so no sharp edges of the figures peek out */
   transform-origin: top center;
 }
 
