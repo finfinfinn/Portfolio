@@ -1,0 +1,55 @@
+import { profile } from "../data/content";
+import { Img } from "./Img";
+import "./Hero.css";
+
+export function Hero() {
+  return (
+    <section id="top" className="hero" aria-label="Introduction">
+      <div className="hero__media">
+        <Img
+          src="/images/me/hero-rooftop.jpg"
+          alt="Samuel Ong on a rooftop with a city skyline behind him"
+          className="hero__img"
+          placeholderLabel="Hero · Rooftop photo"
+          eager
+        />
+        <div className="hero__scrim" aria-hidden="true" />
+        <div className="hero__grain" aria-hidden="true" />
+      </div>
+
+      <div className="hero__content">
+        <div className="hero__inner">
+          <p className="hero__role">
+            <span className="hero__dot" aria-hidden="true" />
+            {profile.role}
+          </p>
+
+          <h1 className="hero__title">
+            {profile.tagline.map((line, i) => (
+              <span key={i} className="hero__line" style={{ animationDelay: `${0.1 + i * 0.12}s` }}>
+                {line}
+              </span>
+            ))}
+          </h1>
+
+          <p className="hero__name">{profile.name}</p>
+          <p className="hero__intro">{profile.heroIntro}</p>
+
+          <div className="hero__ctas">
+            <a href="#projects" className="btn btn--primary">
+              Explore my work
+            </a>
+            <a href="#connect" className="btn btn--ghost">
+              Let’s connect
+            </a>
+          </div>
+        </div>
+
+        <a href="#about" className="hero__scroll" aria-label="Scroll to About section">
+          <span>Scroll</span>
+          <span className="hero__scroll-line" aria-hidden="true" />
+        </a>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,196 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Subject stands right-of-centre, so bias the crop right and keep him in frame. */
+  object-position: 62% 40%;
+}
+
+/* When the hero photo is missing, fill the whole media area with the placeholder */
+.hero__media .img-placeholder.hero__img {
+  position: absolute;
+  inset: 0;
+  min-height: 100svh;
+  border: none;
+}
+
+/* Darkened gradient on the left/bottom so text stays readable,
+   without over-darkening the whole image. */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(14, 14, 16, 0.92) 0%, rgba(14, 14, 16, 0.55) 38%, rgba(14, 14, 16, 0.12) 70%, rgba(14, 14, 16, 0) 100%),
+    linear-gradient(0deg, rgba(14, 14, 16, 0.85) 0%, rgba(14, 14, 16, 0) 55%);
+}
+
+.hero__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.6) 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 0 var(--gutter) clamp(2.5rem, 7vh, 5rem);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero__inner {
+  max-width: 44rem;
+}
+
+.hero__role {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-dim);
+}
+
+.hero__title {
+  font-size: var(--fs-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.hero__line {
+  display: block;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroLineIn 0.8s var(--ease) forwards;
+}
+
+.hero__line:last-child {
+  color: var(--color-accent-soft);
+}
+
+@keyframes heroLineIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero__name {
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.hero__intro {
+  margin-top: 0.75rem;
+  max-width: 38rem;
+  color: var(--color-text-muted);
+  font-size: var(--fs-lead);
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.hero__scroll {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  padding-bottom: 0.25rem;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 46px;
+  background: linear-gradient(var(--color-accent), transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll-line::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--color-accent-soft);
+  animation: scrollPulse 2.2s var(--ease) infinite;
+}
+
+@keyframes scrollPulse {
+  0% { transform: translateY(0); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translateY(300%); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__line {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .hero__scroll-line::after {
+    animation: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero__content {
+    justify-content: flex-start;
+  }
+  .hero__scroll {
+    display: none;
+  }
+  .hero__scrim {
+    background:
+      linear-gradient(0deg, rgba(14, 14, 16, 0.94) 6%, rgba(14, 14, 16, 0.5) 45%, rgba(14, 14, 16, 0.2) 100%);
+  }
+}
