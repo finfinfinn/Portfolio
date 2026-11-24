@@ -21,6 +21,11 @@ type ImgProps = {
 export function Img({ src, alt, className, placeholderLabel, eager }: ImgProps) {
   const [failed, setFailed] = useState(false);
 
+  // Resolve against Vite's base URL so paths work both locally ("/") and when
+  // deployed under a sub-path on GitHub Pages ("/Portfolio/").
+  const base = import.meta.env.BASE_URL;
+  const resolvedSrc = `${base}${src.replace(/^\//, "")}`;
+
   if (failed) {
     return (
       <div
@@ -39,7 +44,7 @@ export function Img({ src, alt, className, placeholderLabel, eager }: ImgProps) 
 
   return (
     <img
-      src={src}
+      src={resolvedSrc}
       alt={alt}
       className={className}
       loading={eager ? "eager" : "lazy"}

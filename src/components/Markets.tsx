@@ -35,7 +35,7 @@ export function Markets() {
               <span
                 className="markets__blur"
                 aria-hidden="true"
-                style={{ backgroundImage: "url(/images/interests/markets.jpg)" }}
+                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/interests/markets.jpg)` }}
               />
             </div>
             <figcaption>{markets.caption}</figcaption>
