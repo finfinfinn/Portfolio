@@ -43,10 +43,6 @@ export function Hero() {
               placeholderLabel="Hero · Rooftop photo"
               eager
             />
-            <figcaption className="hero__caption">
-              <span className="hero__caption-line" aria-hidden="true" />
-              Osaka · on the roof
-            </figcaption>
           </figure>
         </div>
       </div>
