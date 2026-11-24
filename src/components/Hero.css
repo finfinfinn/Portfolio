@@ -97,14 +97,50 @@
 /* ---------- Photo side ---------- */
 .hero__media {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.25rem;
+  max-width: 420px;
+  justify-self: center;
+  width: 100%;
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-surface-line);
+  border: 1px solid var(--color-surface-line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin: 0;
+}
+
+.hero__stat {
+  background: var(--color-bg-elevated);
+  padding: 0.85rem 0.9rem;
+}
+
+.hero__stat dt {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  margin-bottom: 0.3rem;
+}
+
+.hero__stat dd {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text);
+  line-height: 1.35;
 }
 
 .hero__frame {
   position: relative;
   margin: 0;
   width: 100%;
-  max-width: 420px;
   border: 1px solid var(--color-surface-line);
   border-radius: var(--radius);
   overflow: hidden;

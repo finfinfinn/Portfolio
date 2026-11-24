@@ -1,8 +1,8 @@
 :root {
   /* Base palette — dark charcoal / near-black with warm white text */
-  --color-bg: #0e0e10;
-  --color-bg-elevated: #161619;
-  --color-bg-card: #1a1a1e;
+  --color-bg: #0d0d0f;
+  --color-bg-elevated: #17171c;
+  --color-bg-card: #1c1c22;
   --color-surface-line: rgba(255, 255, 255, 0.08);
   --color-surface-line-strong: rgba(255, 255, 255, 0.16);
 

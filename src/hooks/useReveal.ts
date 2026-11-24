@@ -31,10 +31,18 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Safety net: if for any reason the observer never fires, reveal anyway
+    // after a short delay so content is never left hidden.
+    const fallback = window.setTimeout(() => setVisible(true), 1500);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [reduced]);
 
   return { ref, visible };

@@ -1,6 +1,6 @@
 .approach {
   background: var(--color-bg-elevated);
-  border-block: 1px solid var(--color-surface-line);
+  border-bottom: 1px solid var(--color-surface-line);
 }
 
 .approach__heading {

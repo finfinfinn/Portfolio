@@ -44,6 +44,21 @@ export function Hero() {
               eager
             />
           </figure>
+
+          <dl className="hero__stats">
+            <div className="hero__stat">
+              <dt>Study</dt>
+              <dd>Mechatronics · Temasek Poly</dd>
+            </div>
+            <div className="hero__stat">
+              <dt>Focus</dt>
+              <dd>IoT · Automation · Robotics</dd>
+            </div>
+            <div className="hero__stat">
+              <dt>Based in</dt>
+              <dd>Singapore</dd>
+            </div>
+          </dl>
         </div>
       </div>
 
