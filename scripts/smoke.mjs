@@ -23,6 +23,10 @@ await build({
   loader: { ".css": "empty", ".svg": "text" },
   logLevel: "warning",
   external: ["react", "react-dom", "react/jsx-runtime"],
+  // Vite injects import.meta.env; stub BASE_URL for this plain-Node render test.
+  define: {
+    "import.meta.env.BASE_URL": '"/"',
+  },
 });
 
 const mod = await import(path.join(projectRoot, "scripts", ".app.bundle.mjs"));
