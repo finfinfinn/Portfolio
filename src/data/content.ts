@@ -11,7 +11,7 @@ export const profile = {
   role: "Mechatronics Student  |  Aspiring IoT & Automation Engineer",
   tagline: ["BUILT TO ADAPT.", "DRIVEN TO IMPROVE."],
   heroIntro:
-    "I enjoy understanding how systems work, building practical solutions and learning through challenges. I’m constantly looking to improve — both technically and personally.",
+    "I enjoy understanding how systems work, building practical solutions and learning through challenges. I’m constantly looking to improve, both technically and personally.",
   target: {
     role: "IoT & Automation Engineer Intern",
     company: "Innowave Tech",
