@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Vinyl Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- animated background layer (changes per artist) -->
+  <div id="bg-layer"></div>
+  <div id="bg-grain"></div>
+
+  <header class="site-header">
+    <a href="#/" class="brand">
+      <span class="brand-disc" aria-hidden="true"></span>
+      <span class="brand-text">MY&nbsp;VINYL<br/><em>COLLECTION</em></span>
+    </a>
+    <nav id="breadcrumbs" class="breadcrumbs"></nav>
+    <a class="about-link" href="about.html">About</a>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="Search artists or albums…" autocomplete="off" />
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <footer class="site-footer">
+    <span id="stats"></span>
+    <span class="footer-note">Hover an album to see the vinyl color · Click an artist for their era</span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

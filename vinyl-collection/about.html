@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · My Vinyl Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .about-wrap { max-width: 760px; margin: 0 auto; }
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 34px;
+      margin-top: 26px;
+      backdrop-filter: blur(10px);
+    }
+    .about-card h2 {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 1px;
+      font-size: 28px;
+      margin: 0 0 12px;
+      color: var(--accent);
+    }
+    .about-card p, .about-card li { color: var(--muted); line-height: 1.6; }
+    .big-stats { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 26px; }
+    .stat {
+      flex: 1; min-width: 140px;
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 22px; text-align: center;
+    }
+    .stat .num {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 54px; line-height: 1; color: var(--accent);
+    }
+    .stat .lbl { color: var(--muted); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+    .cta {
+      display: inline-block; margin-top: 28px;
+      font-family: "Bebas Neue", sans-serif; letter-spacing: 1px;
+      font-size: 20px; text-decoration: none; color: #fff;
+      padding: 12px 26px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #8e2de2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: transform 0.2s;
+    }
+    .cta:hover { transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+  <div id="bg-layer"></div>
+  <div id="bg-grain"></div>
+
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <span class="brand-disc" aria-hidden="true"></span>
+      <span class="brand-text">MY&nbsp;VINYL<br/><em>COLLECTION</em></span>
+    </a>
+    <nav class="breadcrumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="current">About</span></nav>
+  </header>
+
+  <main class="about-wrap">
+    <h1 class="page-title">About</h1>
+    <p class="page-sub">A home for the records, sorted by genre and styled to each artist's era.</p>
+
+    <div class="big-stats" id="stats-row"></div>
+
+    <div class="about-card">
+      <h2>How it's organised</h2>
+      <p>Every record is filed under a genre — Pop, K-Pop, Rap/Hip-Hop, R&B/Soul,
+      Rock, and Alt/Emo. Open any artist to see their records on a background
+      themed to their era, from 80s neon and synthwave to after-dark red and
+      Motown gold.</p>
+    </div>
+
+    <div class="about-card">
+      <h2>The vinyl-color trick</h2>
+      <p>Hover an album cover and the record slides out, spins, and tells you the
+      color of that pressing — orange, lavender split, seafoam, silver, red
+      splatter, even an iridescent hologram. Standard pressings show classic
+      black.</p>
+    </div>
+
+    <a class="cta" href="index.html">Browse the collection →</a>
+  </main>
+
+  <footer class="site-footer">
+    <span>My Vinyl Collection</span>
+    <span class="footer-note">Built as a static site · hover to see the vinyl color</span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    (function () {
+      const { ARTISTS, GENRES } = window.COLLECTION;
+      const records = ARTISTS.reduce((n, a) => n + a.albums.length, 0);
+      const genres = Object.keys(GENRES).length;
+      document.getElementById("stats-row").innerHTML = `
+        <div class="stat"><div class="num">${ARTISTS.length}</div><div class="lbl">Artists</div></div>
+        <div class="stat"><div class="num">${records}</div><div class="lbl">Records</div></div>
+        <div class="stat"><div class="num">${genres}</div><div class="lbl">Genres</div></div>
+      `;
+    })();
+  </script>
+</body>
+</html>
